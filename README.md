@@ -37,16 +37,25 @@ Built with **React** + **Vite** for the frontend, **Supabase** for backend + dat
 
 ## 🏗️ System Architecture
 
-```mermaid
-flowchart TD
-    U[User] --> N[Netlify (React Frontend)]
-    N --> S[Supabase Database]
-    N --> F[Supabase Edge Functions]
-    F --> O[OpenAI (AI Recipes)]
-    F --> P[Intasend (Payments)]
-    S -->|Stores| SF[Users and Favorites]
-    U -->|Free (3 recipes)| N
-    U -->|Upgrade (Pro)| P
+```
+┌─────────┐     ┌──────────────┐     ┌─────────────────┐
+│  User   │────>│ Netlify      │────>│ Supabase DB     │
+└─────────┘     │ (React FE)   │     └────────┬────────┘
+                └──────┬───────┘              │
+                       │                      │
+                       v                      │
+              ┌────────────────┐             │
+              │ Supabase Edge │<─────────────┘
+              │ Functions     │
+              └───────┬────────┘
+                      │
+          ┌───────────┴───────────┐
+          │                       │
+          v                       v
+   ┌─────────────┐        ┌────────────┐
+   │ OpenAI      │        │ IntaSend   │
+   │ (Recipes)  │        │ (Payments) │
+   └─────────────┘        └────────────┘
 ```
 
 - User opens app via Netlify
