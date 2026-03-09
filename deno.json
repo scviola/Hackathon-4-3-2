@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "supabase": "https://esm.sh/@supabase/supabase-js@2.39.3",
+    "@std/http": "https://deno.land/std@0.208.0/http/server.ts"
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "tasks": {
+    "start": "deno run --watch --allow-net --allow-env supabase/functions/get-recipes/index.ts"
+  }
+}
