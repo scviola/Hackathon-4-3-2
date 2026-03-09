@@ -39,20 +39,20 @@ Built with **React** + **Vite** for the frontend, **Supabase** for backend + dat
 
 ```mermaid
 flowchart TD
-    U[👤 User] --> N[🌐 Netlify (React Frontend)]
-    N --> S[🗄️ Supabase Database]
-    N --> F[⚡ Supabase Edge Functions]
-    F --> O[🤖 OpenAI (AI Recipes)]
-    F --> P[💳 IntaSend (Payments)]
-    S -->|Stores| SF[📂 Users & Favorites]
+    U[User] --> N[Netlify (React Frontend)]
+    N --> S[Supabase Database]
+    N --> F[Supabase Edge Functions]
+    F --> O[OpenAI (AI Recipes)]
+    F --> P[Intasend (Payments)]
+    S -->|Stores| SF[Users and Favorites]
     U -->|Free (3 recipes)| N
     U -->|Upgrade (Pro)| P
-
-    - User opens app via Netlify
-    - Frontend connects to Supabase Database (for users & favorites)
-    - Frontend calls Edge Functions → which talk to OpenAI (recipes) and IntaSend (payments)
-    - Free users get 3 recipes → then can upgrade via IntaSend
 ```
+
+- User opens app via Netlify
+- Frontend connects to Supabase Database (for users and favorites)
+- Frontend calls Edge Functions which talk to OpenAI (recipes) and IntaSend (payments)
+- Free users get 3 recipes then can upgrade via IntaSend
 
 ## ⚡ Supabase Edge Functions
 
